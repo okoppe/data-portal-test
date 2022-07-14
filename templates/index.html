@@ -4,18 +4,21 @@
     <script src="{{url_for('static', filename='js/NSDF.js')}}"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/NSDF.css') }}">
     <meta charset="utf-8">
-    <title>Example Data Port</title>
+    <title>NSDF Data Port</title>
   </head>
   <body>
     <div class="wrapper">
       <div class="header_backdrop">
         <div class="header_text">
-          <h1>Example Data Portal</h1>
-        </div>
+				<h1>NSDF Data Portal</h1>
+				<div id="header_img">
+				<img src="{{url_for('static', filename='images/logo.png')}}" alt="NSDF logo">
+				</div>
+			</div>
       </div>
 
       <div class="sidenav">
-        <a title="NSDF" rel="home" class="" onclick="window.location.href='{{ url_for( 'index') }}';">Data Portal</a>
+        <a title="NSDF" rel="home" class="" onclick="window.location.href='{{ url_for( 'index') }}';">Home</a>
       </div>
 
       {% if (bool_files > 0) %}
