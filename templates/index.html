@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <script src="{{url_for('static', filename='js/NSDF.js')}}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/NSDF.css') }}">
+    <meta charset="utf-8">
+    <title>Example Data Port</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header_backdrop">
+        <div class="header_text">
+          <h1>Example Data Portal</h1>
+        </div>
+      </div>
+
+      <div class="sidenav">
+        <a title="NSDF" rel="home" class="" onclick="window.location.href='{{ url_for( 'index') }}';">Data Portal</a>
+      </div>
+
+      {% if (bool_files > 0) %}
+      <div class="button_section">
+        <form class="" method="post">
+          <select class="button" onchange="location = this.value;" name="selected_Notebook" method="GET" action="/">
+            <option value="{{selectedValue}}" selected>{{selectedValue}}</option>
+            {% for noteBookName in noteBookNames %}
+            <option value="{{url_for('chooseDataSet', noteBookName=noteBookName)}}">{{noteBookName}}</option>
+            {% endfor %}
+          </select>
+        </form>
+
+        <div class="button_containers">
+          <button class="locally button" type="submit" onclick="window.location.href='{{ url_for( 'download') }}';">Run locally (downlad file)</button>
+        </div>
+
+        {% if linkToBokeh %}
+
+        <iframe src="{{linkToBokeh}}" title="Map IFRAME" width=900pt height=900pt>
+          Your browser doesn't support iFrames.
+        </iframe>
+
+        {% endif %}
+
+        {% else %}
+        <p>No files have been added to the Git Hub Repo</p>
+        {% endif %}
+      </div>
+    </div>
+  </body>
+</html>

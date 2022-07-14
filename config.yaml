@@ -1,0 +1,12 @@
+ip: 155.101.6.68 # curl ifconfig.me
+port: 4999
+debug: True
+worker-ports:
+  from: 5000
+  to: 6000
+
+ # choose a github repo with bokeh notebooks
+remote: https://github.com/okoppe/Juypter-Notebook-Repo
+
+ # it will be cloned locally here
+local: /tmp/nsdf-data-portal/Juypter-Notebook-Repo
