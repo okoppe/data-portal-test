@@ -12,6 +12,7 @@ import git
 from git import Repo
 import signal
 import time
+import yaml
 
 class jupterNotebook:
     '''
