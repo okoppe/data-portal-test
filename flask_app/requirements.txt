@@ -1,0 +1,7 @@
+flask
+pandas
+bokeh
+GitPython
+notebook
+requests
+psutil
